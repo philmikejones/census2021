@@ -25,9 +25,8 @@ data = rename(data, Sex = name, Count = value)
 # https://cran.r-project.org/web/packages/apyramid/vignettes/intro.html
 data$Age = cut(data$Age, breaks = pretty(data$Age, n = 20), right = TRUE, include.lowest = TRUE)
 
-plot =
-    age_pyramid(data, age_group = Age, split_by = Sex, count = Count)
-plot
+plot = age_pyramid(data, age_group = Age, split_by = Sex, count = Count)
+
 
 ggsave("figures/age-sex-pyramid.pdf", plot = plot, width = 420, height = 297, units = "mm", dpi = 300)
 ggsave("figures/age-sex-pyramid.png", plot = plot, width = 1680, height = 920, units = "px", dpi = 96)
