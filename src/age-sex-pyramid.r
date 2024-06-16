@@ -6,6 +6,8 @@ library("apyramid")
 library("ggplot2")
 library("scales")
 
+dir.create("figures", showWarnings = FALSE)
+
 data = readr::read_csv("data/census-2021-age-sex.csv", skip = 9, show_col_types = FALSE, n_max = 91)
 
 data$Age = str_replace_all(data$Age, "Aged ", "")
